@@ -1,0 +1,63 @@
+.methodology-home {
+    padding: 46px 0;
+    background: #f5f7fb;
+}
+
+.methodology-home-card {
+    display: grid;
+    grid-template-columns: minmax(140px, 190px) 1fr;
+    gap: 30px;
+    align-items: center;
+    padding: 28px;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 10px 35px rgba(20, 43, 74, .08);
+}
+
+.methodology-home-card img {
+    display: block;
+    width: 100%;
+    max-height: 270px;
+    object-fit: contain;
+}
+
+.methodology-home-card h2 {
+    color: #172a46;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.methodology-home-card p {
+    color: #59697e;
+}
+
+.methodology-home-card .methodology-author {
+    font-weight: 600;
+}
+
+.methodology-eyebrow {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #1b65a8;
+    font-size: .82rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.methodology-dashboard-cover {
+    width: 120px;
+    max-height: 175px;
+    object-fit: contain;
+}
+
+@media (max-width: 760px) {
+    .methodology-home-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .methodology-home-card img {
+        max-width: 160px;
+        margin: auto;
+    }
+}
