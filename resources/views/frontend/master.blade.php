@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ asset("assets/frontend/css/style.css") }}"/>
     <link rel="stylesheet" href="{{ asset("assets/frontend/css/custom.css") }}"/>
     <link rel="stylesheet" href="{{ asset("assets/frontend/css/methodology.css") }}"/>
+    @yield("style")
 </head>
 <body>
     <div class="loader">
