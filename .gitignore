@@ -4,7 +4,7 @@
 /public/hot
 /public/storage
 /InvestigacionEdu.zip
-/database/db_lara_blog.sql
+/database/*.sql
 /storage/*.key
 /storage/logs/*.log
 /vendor
