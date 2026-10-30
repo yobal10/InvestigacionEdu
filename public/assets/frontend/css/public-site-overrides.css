@@ -11,6 +11,10 @@ body {
     letter-spacing: 0;
 }
 
+.marketing-site .m-brand-symbol {
+    font-size: 19px;
+}
+
 .marketing-site .m-article > h1 {
     font-size: 48px;
 }

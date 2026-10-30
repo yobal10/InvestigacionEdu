@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="@yield('meta_description', 'Recursos para planificar estudios, crear cuestionarios y analizar información con rigor.')">
     <meta name="theme-color" content="#0b2d61">
-    <title>@yield('title', 'Nexo Surveys | Recursos de investigación')</title>
+    <title>@yield('title', 'InvestigacionEdu | Recursos de investigación')</title>
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/public-site.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/public-site-overrides.css') }}">
 </head>
@@ -18,9 +18,9 @@
             <a class="m-login" href="{{ route('auth.login') }}">Iniciar sesión</a>
         </div>
         <div class="m-head-content">
-            <a class="m-brand" href="{{ route('frontend.home') }}" aria-label="Nexo Surveys, inicio">
-                <span class="m-brand-symbol" aria-hidden="true">N</span>
-                <span>Nexo<span>Surveys</span></span>
+            <a class="m-brand" href="{{ route('frontend.home') }}" aria-label="InvestigacionEdu, inicio">
+                <span class="m-brand-symbol" aria-hidden="true">IE</span>
+                <span>InvestigacionEdu</span>
             </a>
             <button class="m-hamburger" type="button" data-mobile-toggle aria-expanded="false" aria-label="Abrir menú">☰</button>
             <nav class="m-nav" data-mobile-nav aria-label="Navegación principal">
@@ -70,7 +70,7 @@
     <footer class="m-footer">
         <div class="m-container m-footer-inner">
             <div>
-                <a class="m-brand m-footer-brand" href="{{ route('frontend.home') }}"><span class="m-brand-symbol" aria-hidden="true">N</span><span>Nexo<span>Surveys</span></span></a>
+                <a class="m-brand m-footer-brand" href="{{ route('frontend.home') }}" aria-label="InvestigacionEdu, inicio"><span class="m-brand-symbol" aria-hidden="true">IE</span><span>InvestigacionEdu</span></a>
                 <p>Recursos para investigar, preguntar y analizar con criterio.</p>
                 <small>El portal público no incluye un constructor ni almacenamiento de respuestas a encuestas.</small>
             </div>

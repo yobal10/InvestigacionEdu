@@ -3,7 +3,7 @@
 @php
     $isArticle = isset($article);
 @endphp
-@section('title', $isArticle ? $article['title'].' | Nexo Surveys' : 'Nexo Surveys | '.ucfirst($pageKey))
+@section('title', $isArticle ? $article['title'].' | InvestigacionEdu' : 'InvestigacionEdu | '.ucfirst($pageKey))
 @section('meta_description', $isArticle ? $article['excerpt'] : 'Recursos y guías para planificar estudios, crear cuestionarios y analizar información con rigor.')
 
 @section('content')
