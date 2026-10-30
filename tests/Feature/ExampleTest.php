@@ -38,7 +38,10 @@ class ExampleTest extends TestCase
 
         $this->get('/inicio')
             ->assertOk()
-            ->assertSeeText('Investiga, pregunta y comprende tus resultados');
+            ->assertSeeText('Metodología de estudios online')
+            ->assertSeeText('¿cómo aplicarla de manera correcta?')
+            ->assertSee('m-alt-hero-book')
+            ->assertSee('assets/metodologia-investigacion-total.png');
     }
 
     public function test_research_guide_and_public_article_are_available(): void
