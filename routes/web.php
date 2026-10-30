@@ -31,8 +31,8 @@ use App\Http\Controllers\Dashboard\SurveyController as DashboardSurveyController
 use Illuminate\Support\Facades\Route;
 
 Route::name("frontend.")->group(function() {
-    Route::get("/", [PublicPortalController::class, "home"])->name("home");
-    Route::get("/inicio", [PublicPortalController::class, "page"])->defaults("pageKey", "inicio")->name("portal.home");
+    Route::redirect("/", "/dashboard")->name("landing");
+    Route::get("/inicio", [PublicPortalController::class, "home"])->name("home");
     Route::get("/recursos", [PublicPortalController::class, "page"])->defaults("pageKey", "recursos")->name("portal.resources");
     Route::get("/caracteristicas", [PublicPortalController::class, "page"])->defaults("pageKey", "caracteristicas")->name("portal.features");
     Route::get("/soluciones", [PublicPortalController::class, "page"])->defaults("pageKey", "soluciones")->name("portal.solutions");

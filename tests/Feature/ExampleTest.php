@@ -33,9 +33,11 @@ class ExampleTest extends TestCase
 
     public function test_the_homepage_displays_the_public_portal(): void
     {
-        $response = $this->get('/');
+        $this->get('/')
+            ->assertRedirect('/dashboard');
 
-        $response->assertOk()
+        $this->get('/inicio')
+            ->assertOk()
             ->assertSeeText('Investiga, pregunta y comprende tus resultados');
     }
 
