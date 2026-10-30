@@ -23,7 +23,6 @@ class SiteSettingController extends Controller
             "tagline" => ["required", "string", "min:2", "max:255"],
             "description" => ["required", "string", "min:2", "max:300"],
             "copyright_text" => ["required", "string", "min:2", "max:300"],
-            "enable_registration" => ["nullable", "integer"],
             "logo_dark" => ["nullable", "image"],
             "logo_light" => ["nullable", "image"],
         ]);
@@ -32,7 +31,6 @@ class SiteSettingController extends Controller
         $sitesettings->tagline = $validated["tagline"];
         $sitesettings->description = $validated["description"];
         $sitesettings->copyright_text = $validated["copyright_text"];
-        $sitesettings->enable_registration = Arr::has($validated, "enable_registration") ? "1" : "0";
         if (Arr::has($validated, "logo_dark")) {
             $image = $request->file("logo_dark");
             $imageName = "logo_dark_".Str::random(5).".".$image->extension();

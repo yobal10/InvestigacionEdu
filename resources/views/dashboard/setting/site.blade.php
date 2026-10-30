@@ -74,13 +74,6 @@
                                             <label for="copyright_text">Texto de Copyright</label>
                                             <textarea id="copyright_text" name="copyright_text" placeholder="Ingrese texto de copyright" class="form-control">{{ $sitesettings->copyright_text }}</textarea>
                                         </div>
-                                        <div class="align-items-center d-flex form-group">
-                                            <label for="enable_registration" class="mr-4">Habilitar Registro</label>
-                                            <div class="icheck-success d-inline">
-                                                <input type="checkbox" name="enable_registration" id="enable_registration" value="1" {{ $sitesettings->enable_registration ? "checked" : "" }}/>
-                                                <label for="enable_registration"></label>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                                 <button class="btn btn-primary" type="submit">Actualizar</button>

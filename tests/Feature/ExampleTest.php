@@ -54,6 +54,29 @@ class ExampleTest extends TestCase
             ->assertSee('assets/metodologia-investigacion-total.png');
     }
 
+    public function test_signup_works_even_when_legacy_registration_setting_is_disabled(): void
+    {
+        SiteSetting::first()->update(['enable_registration' => false]);
+
+        $this->get(route('auth.signup'))
+            ->assertOk()
+            ->assertSeeText('Registrarse')
+            ->assertDontSeeText('El registro de usuarios no está permitido actualmente');
+
+        $this->post(route('auth.signup.submit'), [
+            'name' => 'Nuevo Usuario',
+            'username' => 'nuevo_usuario',
+            'email' => 'nuevo@example.test',
+            'password' => 'secure-pass-123',
+            'password_confirmation' => 'secure-pass-123',
+            'agree' => '1',
+        ])->assertRedirect(route('dashboard.home'));
+
+        $user = User::where('email', 'nuevo@example.test')->firstOrFail();
+        $this->assertSame(User::IS_VISITOR, $user->role);
+        $this->assertAuthenticatedAs($user);
+    }
+
     public function test_dashboard_uses_its_own_visual_theme_and_keeps_existing_content(): void
     {
         $admin = User::create([

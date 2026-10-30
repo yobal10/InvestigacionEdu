@@ -7,7 +7,6 @@
         <div class="row">
             <div class="col-lg-6 col-md-8 m-auto">
                 <div class="login-content">
-                    @if ($enable_registration)
                     <h4>Registrarse</h4>
                     @if ($errors->any())
                     <div class="alert alert-danger rounded-0">
@@ -44,11 +43,6 @@
                         </div>
                         <p class="form-group text-center">¿Ya tienes cuenta? <a href="{{ route("auth.login") }}" class="btn-link">Iniciar Sesión</a> </p>
                     </form>
-                    @else
-                    <div class="alert alert-danger rounded-0 m-0">
-                        <span>¡El registro de usuarios no está permitido actualmente!</span>
-                    </div>
-                    @endif
                 </div>
             </div>
          </div>
