@@ -1,0 +1,278 @@
+body.dashboard-nexo {
+    --panel-navy: #0b2d61;
+    --panel-blue: #1887e8;
+    --panel-ink: #17365f;
+    --panel-muted: #70829a;
+    --panel-line: #e4ebf3;
+    background: #f4f7fb;
+    color: var(--panel-ink);
+    font-family: "Source Sans Pro", "Segoe UI", Arial, sans-serif;
+}
+
+.dashboard-nexo .main-header {
+    min-height: 62px;
+    padding: 0 14px;
+    background: #fff;
+    border-bottom: 1px solid var(--panel-line);
+    box-shadow: 0 2px 10px rgba(13, 43, 82, .035);
+}
+
+.dashboard-nexo .main-header .nav-link {
+    color: #536984;
+}
+
+.dashboard-nexo .main-header .nav-link:hover {
+    color: var(--panel-blue);
+}
+
+.dashboard-nexo .main-sidebar {
+    background: linear-gradient(180deg, #0b2d61 0%, #103c79 100%);
+    box-shadow: 4px 0 20px rgba(10, 37, 76, .12);
+}
+
+.dashboard-nexo .brand-link {
+    min-height: 62px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, .13);
+    color: #fff;
+}
+
+.dashboard-nexo .brand-link:hover {
+    color: #fff;
+}
+
+.dashboard-nexo .brand-link .brand-text {
+    white-space: normal;
+}
+
+.dashboard-nexo .user-panel {
+    border-bottom-color: rgba(255, 255, 255, .13) !important;
+}
+
+.dashboard-nexo .user-panel .info a,
+.dashboard-nexo .nav-sidebar .nav-link {
+    color: #d8e6f8;
+}
+
+.dashboard-nexo .nav-sidebar .nav-link {
+    margin: 2px 10px;
+    padding: 10px 12px;
+    border-radius: 7px;
+}
+
+.dashboard-nexo .nav-sidebar .nav-link:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, .1);
+}
+
+.dashboard-nexo .nav-sidebar .nav-link.active {
+    color: #fff;
+    background: #1887e8;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, .13);
+}
+
+.dashboard-nexo .nav-sidebar .nav-treeview > .nav-item > .nav-link {
+    margin-left: 18px;
+    color: #c1d5ef;
+}
+
+.dashboard-nexo .nav-sidebar .nav-treeview > .nav-item > .nav-link.active {
+    color: #fff;
+}
+
+.dashboard-nexo .content-wrapper {
+    background: #f4f7fb;
+}
+
+.dashboard-nexo .content-header {
+    padding: 24px 16px 14px;
+}
+
+.dashboard-nexo .content-header h1 {
+    color: var(--panel-navy);
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.dashboard-nexo .breadcrumb {
+    background: transparent;
+}
+
+.dashboard-nexo .breadcrumb a {
+    color: var(--panel-blue);
+}
+
+.dashboard-nexo .content {
+    padding-bottom: 28px;
+}
+
+.dashboard-nexo .small-box {
+    position: relative;
+    overflow: hidden;
+    min-height: 142px;
+    color: var(--panel-ink) !important;
+    background: #fff !important;
+    border: 1px solid var(--panel-line);
+    border-top: 3px solid var(--panel-blue);
+    border-radius: 10px;
+    box-shadow: 0 7px 22px rgba(13, 43, 82, .055);
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.dashboard-nexo .small-box:hover {
+    color: var(--panel-ink) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(13, 43, 82, .1);
+}
+
+.dashboard-nexo .small-box.bg-success {
+    border-top-color: #27a879;
+}
+
+.dashboard-nexo .small-box.bg-warning {
+    border-top-color: #f0ad37;
+}
+
+.dashboard-nexo .small-box.bg-danger {
+    border-top-color: #e66c73;
+}
+
+.dashboard-nexo .small-box.bg-secondary {
+    border-top-color: #8798ad;
+}
+
+.dashboard-nexo .small-box .inner {
+    padding: 18px 20px 10px;
+}
+
+.dashboard-nexo .small-box .inner h3 {
+    color: var(--panel-navy);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.dashboard-nexo .small-box .inner p {
+    color: var(--panel-muted);
+    font-size: .98rem;
+}
+
+.dashboard-nexo .small-box .icon {
+    color: rgba(24, 135, 232, .13);
+}
+
+.dashboard-nexo .small-box .icon > i {
+    font-size: 58px;
+    top: 16px;
+}
+
+.dashboard-nexo .small-box-footer {
+    padding: 8px 18px;
+    color: #2574bd !important;
+    background: #f7faff;
+    border-top: 1px solid #edf2f8;
+    text-align: left;
+}
+
+.dashboard-nexo .small-box-footer:hover {
+    color: var(--panel-navy) !important;
+    background: #eef6ff;
+}
+
+.dashboard-nexo .card {
+    border: 1px solid var(--panel-line);
+    border-radius: 10px;
+    box-shadow: 0 7px 22px rgba(13, 43, 82, .055);
+}
+
+.dashboard-nexo .card-header {
+    background: #fff;
+    border-bottom-color: var(--panel-line);
+}
+
+.dashboard-nexo .methodology-dashboard-card {
+    overflow: hidden;
+    border-left: 4px solid var(--panel-blue);
+}
+
+.dashboard-nexo .methodology-dashboard-card .card-body {
+    gap: 20px;
+    padding: 24px;
+}
+
+.dashboard-nexo .methodology-dashboard-cover {
+    width: 124px;
+    max-height: 180px;
+    flex: 0 0 auto;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 5px 16px rgba(13, 43, 82, .16);
+}
+
+.dashboard-nexo .methodology-dashboard-card h2 {
+    color: var(--panel-navy);
+}
+
+.dashboard-nexo .methodology-dashboard-card p {
+    color: #526882;
+}
+
+.dashboard-nexo .btn-primary {
+    background: var(--panel-blue);
+    border-color: var(--panel-blue);
+}
+
+.dashboard-nexo .btn-primary:hover,
+.dashboard-nexo .btn-primary:focus {
+    background: #0b70d1;
+    border-color: #0b70d1;
+}
+
+.dashboard-nexo .table thead th {
+    color: var(--panel-navy);
+    background: #f5f8fc;
+    border-bottom-color: var(--panel-line);
+}
+
+.dashboard-nexo .form-control {
+    border-color: #d8e2ee;
+    border-radius: 6px;
+}
+
+.dashboard-nexo .form-control:focus {
+    border-color: #83b9ee;
+    box-shadow: 0 0 0 .2rem rgba(24, 135, 232, .13);
+}
+
+.dashboard-nexo .main-footer {
+    color: var(--panel-muted);
+    background: #fff;
+    border-top: 1px solid var(--panel-line);
+}
+
+@media (max-width: 767.98px) {
+    .dashboard-nexo .content-header {
+        padding: 18px 12px 10px;
+    }
+
+    .dashboard-nexo .content-header h1 {
+        font-size: 1.45rem;
+    }
+
+    .dashboard-nexo .methodology-dashboard-card .card-body {
+        align-items: flex-start !important;
+        flex-direction: column;
+    }
+
+    .dashboard-nexo .methodology-dashboard-cover {
+        width: 112px;
+        max-height: 160px;
+        margin: 0 0 14px !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .dashboard-nexo .small-box {
+        transition: none;
+    }
+}

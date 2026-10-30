@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Models\Menu;
 use App\Models\SiteSetting;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -45,6 +46,27 @@ class ExampleTest extends TestCase
             ->assertOk()
             ->assertSeeText('Metodología de estudios online')
             ->assertSee('m-alt-hero-book')
+            ->assertSee('assets/metodologia-investigacion-total.png');
+    }
+
+    public function test_dashboard_uses_its_own_visual_theme_and_keeps_existing_content(): void
+    {
+        $admin = User::create([
+            'name' => 'Admin',
+            'username' => 'admin-panel',
+            'email' => 'admin-panel@example.test',
+            'password' => 'password',
+            'role' => User::IS_ADMIN,
+            'status' => true,
+        ]);
+
+        $this->actingAs($admin)
+            ->get(route('dashboard.home'))
+            ->assertOk()
+            ->assertSee('dashboard-nexo', false)
+            ->assertSee('assets/dashboard/css/investigaedu-panel.css')
+            ->assertSeeText('Encuestas')
+            ->assertSeeText('Respuestas')
             ->assertSee('assets/metodologia-investigacion-total.png');
     }
 }

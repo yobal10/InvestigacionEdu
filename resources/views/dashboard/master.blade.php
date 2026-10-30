@@ -14,9 +14,10 @@
     <link rel="stylesheet" href="{{ asset("assets/dashboard/plugins/overlayScrollbars/css/OverlayScrollbars.min.css") }}"/>
     <link rel="stylesheet" href="{{ asset("assets/dashboard/plugins/daterangepicker/daterangepicker.css") }}"/>
     <link rel="stylesheet" href="{{ asset("assets/dashboard/plugins/summernote/summernote-bs4.min.css") }}"/>
+    <link rel="stylesheet" href="{{ asset("assets/dashboard/css/investigaedu-panel.css") }}"/>
     @yield("style")
 </head>
-<body class="hold-transition sidebar-mini layout-fixed"> <!-- sidebar-collapse -->
+<body class="hold-transition sidebar-mini layout-fixed dashboard-nexo"> <!-- sidebar-collapse -->
     <div class="wrapper">
         <div class="preloader flex-column justify-content-center align-items-center">
             <span class="fa-2x brand-text font-weight-bold px-2">{{ config('app.sitesettings')::first()->site_title }}</span>
