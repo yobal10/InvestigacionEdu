@@ -14,16 +14,17 @@
     <link rel="stylesheet" href="{{ asset("assets/dashboard/plugins/overlayScrollbars/css/OverlayScrollbars.min.css") }}"/>
     <link rel="stylesheet" href="{{ asset("assets/dashboard/plugins/daterangepicker/daterangepicker.css") }}"/>
     <link rel="stylesheet" href="{{ asset("assets/dashboard/plugins/summernote/summernote-bs4.min.css") }}"/>
-    <link rel="stylesheet" href="{{ asset("assets/dashboard/css/investigaedu-panel.css") }}?v=2"/>
+    <link rel="stylesheet" href="{{ asset("assets/dashboard/css/investigaedu-panel.css") }}?v=3"/>
     @yield("style")
 </head>
-<body class="hold-transition sidebar-mini layout-fixed dashboard-nexo"> <!-- sidebar-collapse -->
+<body class="hold-transition dashboard-nexo">
     <div class="wrapper">
         <div class="preloader flex-column justify-content-center align-items-center">
             <span class="fa-2x brand-text font-weight-bold px-2">{{ config('app.sitesettings')::first()->site_title }}</span>
         </div>
         @include("dashboard.inc.navbar")
         @include("dashboard.inc.sidebar")
+        <button class="dashboard-menu-overlay" type="button" data-dashboard-menu-close aria-label="Cerrar menú"></button>
         @yield("content")
         @include("dashboard.inc.footer")
     </div>
@@ -44,6 +45,31 @@
     <script src="{{ asset("assets/dashboard/plugins/summernote/summernote-bs4.min.js") }}"></script>
     <script src="{{ asset("assets/dashboard/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js") }}"></script>
     <script src="{{ asset("assets/dashboard/dist/js/adminlte.js") }}"></script>
+    <script>
+        (() => {
+            const body = document.body;
+            const toggle = document.querySelector("[data-dashboard-menu]");
+            const close = document.querySelector("[data-dashboard-menu-close]");
+
+            const setMenuOpen = (isOpen) => {
+                body.classList.toggle("dashboard-menu-open", isOpen);
+                toggle.setAttribute("aria-expanded", String(isOpen));
+            };
+
+            toggle.addEventListener("click", () => {
+                setMenuOpen(!body.classList.contains("dashboard-menu-open"));
+            });
+            close.addEventListener("click", () => setMenuOpen(false));
+            document.querySelectorAll(".main-sidebar a").forEach((link) => {
+                link.addEventListener("click", () => {
+                    if (link.getAttribute("href") !== "#") setMenuOpen(false);
+                });
+            });
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "Escape") setMenuOpen(false);
+            });
+        })();
+    </script>
     @yield("script")
 </body>
 </html>
