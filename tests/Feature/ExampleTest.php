@@ -84,8 +84,8 @@ class ExampleTest extends TestCase
             ->assertSeeText('Configuración')
             ->assertSeeText('Cerrar Sesión')
             ->assertSee('data-widget="fullscreen"', false)
-            ->assertSeeText('Biblioteca metodológica')
-            ->assertSeeText('Metodología de la investigación total')
-            ->assertSee('assets/metodologia-investigacion-total.png');
+            ->assertDontSeeText('Biblioteca metodológica')
+            ->assertDontSeeText('Metodología de la investigación total')
+            ->assertDontSee('assets/metodologia-investigacion-total.png');
     }
 }

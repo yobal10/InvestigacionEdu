@@ -93,17 +93,6 @@
                     </div>
                 </div>
             </div>
-            <div class="card mt-3 methodology-dashboard-card">
-                <div class="card-body d-md-flex align-items-center">
-                    <img src="{{ asset('assets/metodologia-investigacion-total.png') }}" alt="Portada de Metodología de la investigación total" class="methodology-dashboard-cover mr-md-4 mb-3 mb-md-0">
-                    <div>
-                        <span class="text-uppercase text-muted font-weight-bold">Biblioteca metodológica</span>
-                        <h2 class="h4 mt-2">Metodología de la investigación total</h2>
-                        <p class="mb-1">Cuantitativa, cualitativa y redacción de tesis. Referencia principal: Humberto Ñaupas Paitán y coautores.</p>
-                        <a href="{{ route('frontend.methodology') }}" class="btn btn-primary mt-2">Abrir fórmulas y recursos</a>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 </div>
