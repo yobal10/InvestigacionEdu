@@ -64,9 +64,16 @@ class ExampleTest extends TestCase
             ->get(route('dashboard.home'))
             ->assertOk()
             ->assertSee('dashboard-nexo', false)
-            ->assertSee('assets/dashboard/css/investigaedu-panel.css')
+            ->assertSee('assets/dashboard/css/investigaedu-panel.css?v=2')
+            ->assertSee('dashboard-home-layout', false)
+            ->assertSeeText('Posts')
+            ->assertSeeText('Comentarios')
+            ->assertSeeText('Usuarios')
+            ->assertSeeText('Categorías')
             ->assertSeeText('Encuestas')
             ->assertSeeText('Respuestas')
+            ->assertSeeText('Biblioteca metodológica')
+            ->assertSeeText('Metodología de la investigación total')
             ->assertSee('assets/metodologia-investigacion-total.png');
     }
 }
