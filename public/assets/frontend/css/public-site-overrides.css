@@ -15,6 +15,12 @@ body {
     font-size: 19px;
 }
 
+.marketing-site .m-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
 .marketing-site .m-article > h1 {
     font-size: 48px;
 }
