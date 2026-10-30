@@ -34,7 +34,7 @@ class ExampleTest extends TestCase
     public function test_the_homepage_displays_the_public_portal(): void
     {
         $this->get('/')
-            ->assertRedirect('/dashboard');
+            ->assertRedirect('/inicio');
 
         $this->get('/inicio')
             ->assertOk()
@@ -65,16 +65,10 @@ class ExampleTest extends TestCase
         $this->actingAs($admin)
             ->get(route('dashboard.home'))
             ->assertOk()
-            ->assertSee('dashboard-nexo', false)
-            ->assertSee('assets/dashboard/css/investigaedu-panel.css?v=7')
-            ->assertSee('dashboard-page-heading', false)
-            ->assertSee('dashboard-article-layout', false)
-            ->assertSee('assets/frontend/images/imagen-estudio.svg')
-            ->assertSee('dashboard-stat-card', false)
-            ->assertSee('data-dashboard-menu', false)
-            ->assertSee('aria-label="Resumen del panel"', false)
-            ->assertSee('dashboard-resource-card', false)
-            ->assertSee('dashboard-footer-links', false)
+            ->assertSee('class="hold-transition sidebar-mini layout-fixed"', false)
+            ->assertDontSee('investigaedu-panel.css')
+            ->assertSee('class="small-box bg-info"', false)
+            ->assertSee('class="small-box bg-primary"', false)
             ->assertSeeText('Posts')
             ->assertSeeText('Comentarios')
             ->assertSeeText('Usuarios')

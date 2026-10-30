@@ -3,107 +3,106 @@
 @section("content")
 <div class="content-wrapper">
     <div class="content-header">
-        <div class="container-fluid dashboard-container">
-            <ol class="breadcrumb dashboard-breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route("dashboard.home") }}">Inicio</a></li>
-                <li class="breadcrumb-item active">Panel</li>
-            </ol>
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">Panel</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="{{ route("dashboard.home") }}">Inicio</a></li>
+                        <li class="breadcrumb-item active">Panel</li>
+                    </ol>
+                </div>
+            </div>
         </div>
     </div>
     <section class="content">
-        <div class="container-fluid dashboard-container">
-            <div class="dashboard-article-layout">
-                <main class="dashboard-article-main">
-                    <header class="dashboard-page-heading">
-                        <h1>Panel</h1>
-                        <p>Resumen de la actividad y los recursos de tu sitio.</p>
-                    </header>
-                    <figure class="dashboard-feature-image">
-                        <img src="{{ asset('assets/frontend/images/imagen-estudio.svg') }}" alt="Ilustración de análisis de datos con gráficos y resultados">
-                        <figcaption>Encuestas</figcaption>
-                    </figure>
-                    <section class="dashboard-metrics" aria-label="Resumen del panel">
-                        <div class="dashboard-section-heading">
-                            <h2>Resumen</h2>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>{{ $posts }}</h3>
+                            <p>Posts</p>
                         </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <a href="{{ route("dashboard.posts.index") }}" class="small-box bg-info dashboard-stat-card">
-                                    <img src="{{ asset('assets/frontend/images/imagen-estudio.svg') }}" alt="" class="dashboard-stat-image">
-                                    <span class="inner">
-                                        <span class="dashboard-stat-label">Posts</span>
-                                        <strong>{{ $posts }}</strong>
-                                        <span class="dashboard-stat-action">Más info <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
-                                    </span>
-                                </a>
-                            </div>
-                            <div class="col-sm-6">
-                                <a href="{{ route("dashboard.comments.index") }}" class="small-box bg-success dashboard-stat-card">
-                                    <img src="{{ asset('assets/frontend/images/imagen-estudio.svg') }}" alt="" class="dashboard-stat-image">
-                                    <span class="inner">
-                                        <span class="dashboard-stat-label">Comentarios</span>
-                                        <strong>{{ $comments }}</strong>
-                                        <span class="dashboard-stat-action">Más info <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
-                                    </span>
-                                </a>
-                            </div>
-                            <div class="col-sm-6">
-                                <a href="{{ route("dashboard.users.index") }}" class="small-box bg-warning dashboard-stat-card">
-                                    <img src="{{ asset('assets/frontend/images/imagen-estudio.svg') }}" alt="" class="dashboard-stat-image">
-                                    <span class="inner">
-                                        <span class="dashboard-stat-label">Usuarios</span>
-                                        <strong>{{ $users }}</strong>
-                                        <span class="dashboard-stat-action">Más info <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
-                                    </span>
-                                </a>
-                            </div>
-                            <div class="col-sm-6">
-                                <a href="{{ route("dashboard.categories.index") }}" class="small-box bg-danger dashboard-stat-card">
-                                    <img src="{{ asset('assets/frontend/images/imagen-estudio.svg') }}" alt="" class="dashboard-stat-image">
-                                    <span class="inner">
-                                        <span class="dashboard-stat-label">Categorías</span>
-                                        <strong>{{ $categories }}</strong>
-                                        <span class="dashboard-stat-action">Más info <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
-                                    </span>
-                                </a>
-                            </div>
-                            <div class="col-sm-6">
-                                <a href="{{ route("dashboard.surveys.index") }}" class="small-box bg-primary dashboard-stat-card">
-                                    <img src="{{ asset('assets/frontend/images/imagen-estudio.svg') }}" alt="" class="dashboard-stat-image">
-                                    <span class="inner">
-                                        <span class="dashboard-stat-label">Encuestas</span>
-                                        <strong>{{ $surveys }}</strong>
-                                        <span class="dashboard-stat-action">Administrar encuestas <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
-                                    </span>
-                                </a>
-                            </div>
-                            <div class="col-sm-6">
-                                <a href="{{ route("dashboard.surveys.index") }}" class="small-box bg-secondary dashboard-stat-card">
-                                    <img src="{{ asset('assets/frontend/images/imagen-estudio.svg') }}" alt="" class="dashboard-stat-image">
-                                    <span class="inner">
-                                        <span class="dashboard-stat-label">Respuestas</span>
-                                        <strong>{{ $surveyResponses }}</strong>
-                                        <span class="dashboard-stat-action">Ver resultados <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
-                                    </span>
-                                </a>
-                            </div>
+                        <div class="icon">
+                            <i class="fas fa-pencil-alt"></i>
                         </div>
-                    </section>
-                </main>
-                <aside class="dashboard-article-sidebar">
-                    <article class="dashboard-resource-card">
-                        <span class="dashboard-resource-kicker">Biblioteca metodológica</span>
-                        <img src="{{ asset('assets/metodologia-investigacion-total.png') }}" alt="Portada de Metodología de la investigación total" class="methodology-dashboard-cover">
-                        <h2>Metodología de la investigación total</h2>
-                        <p>Cuantitativa, cualitativa y redacción de tesis. Referencia principal: Humberto Ñaupas Paitán y coautores.</p>
-                        <a href="{{ route('frontend.methodology') }}" class="dashboard-resource-button">Abrir fórmulas y recursos</a>
-                    </article>
-                    <section class="dashboard-quick-links">
-                        <h2>Encuestas y resultados</h2>
-                        <a href="{{ route('dashboard.surveys.index') }}">Administrar encuestas <span aria-hidden="true">→</span></a>
-                        <a href="{{ route('dashboard.surveys.index') }}">Ver resultados <span aria-hidden="true">→</span></a>
-                    </section>
-                </aside>
+                        <a href="{{ route("dashboard.posts.index") }}" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>{{ $comments }}</h3>
+                            <p>Comentarios</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-comment-alt"></i>
+                        </div>
+                        <a href="{{ route("dashboard.comments.index") }}" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3>{{ $users }}</h3>
+                            <p>Usuarios</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <a href="{{ route("dashboard.users.index") }}" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3>{{ $categories }}</h3>
+                            <p>Categorías</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-th-list"></i>
+                        </div>
+                        <a href="{{ route("dashboard.categories.index") }}" class="small-box-footer">Más info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-primary">
+                        <div class="inner">
+                            <h3>{{ $surveys }}</h3>
+                            <p>Encuestas</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-poll"></i>
+                        </div>
+                        <a href="{{ route("dashboard.surveys.index") }}" class="small-box-footer">Administrar encuestas <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="small-box bg-secondary">
+                        <div class="inner">
+                            <h3>{{ $surveyResponses }}</h3>
+                            <p>Respuestas</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <a href="{{ route("dashboard.surveys.index") }}" class="small-box-footer">Ver resultados <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card mt-3 methodology-dashboard-card">
+                <div class="card-body d-md-flex align-items-center">
+                    <img src="{{ asset('assets/metodologia-investigacion-total.png') }}" alt="Portada de Metodología de la investigación total" class="methodology-dashboard-cover mr-md-4 mb-3 mb-md-0">
+                    <div>
+                        <span class="text-uppercase text-muted font-weight-bold">Biblioteca metodológica</span>
+                        <h2 class="h4 mt-2">Metodología de la investigación total</h2>
+                        <p class="mb-1">Cuantitativa, cualitativa y redacción de tesis. Referencia principal: Humberto Ñaupas Paitán y coautores.</p>
+                        <a href="{{ route('frontend.methodology') }}" class="btn btn-primary mt-2">Abrir fórmulas y recursos</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
