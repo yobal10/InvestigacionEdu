@@ -43,6 +43,8 @@ class ExampleTest extends TestCase
         $this->get('/guia-de-investigacion')->assertOk();
         $this->get('/blog/metodologia-de-estudios-online')
             ->assertOk()
-            ->assertSeeText('Metodología de estudios online');
+            ->assertSeeText('Metodología de estudios online')
+            ->assertSee('m-alt-hero-book')
+            ->assertSee('assets/metodologia-investigacion-total.png');
     }
 }

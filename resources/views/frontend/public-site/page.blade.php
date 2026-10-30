@@ -8,12 +8,18 @@
 
 @section('content')
 @if($isArticle)
+    @php
+        $showBookCover = $article['slug'] === 'metodologia-de-estudios-online';
+    @endphp
     <main class="m-container">
         <nav class="m-breadcrumb" aria-label="Ruta de navegación"><a href="{{ route('frontend.home') }}">Inicio</a><span aria-hidden="true">›</span><a href="{{ url('/recursos') }}">Recursos</a><span aria-hidden="true">›</span><span>{{ $article['category'] }}</span></nav>
         <div class="m-layout">
             <article class="m-article">
                 <h1>{{ $article['title'] }}</h1>
-                <div class="m-alt-hero"><img src="{{ asset('assets/frontend/images/imagen-estudio.svg') }}" alt="Ilustración de análisis de datos y resultados"><span>{{ $article['category'] }}</span></div>
+                <div class="m-alt-hero{{ $showBookCover ? ' m-alt-hero-book' : '' }}">
+                    <img src="{{ asset($showBookCover ? 'assets/metodologia-investigacion-total.png' : 'assets/frontend/images/imagen-estudio.svg') }}" alt="{{ $showBookCover ? 'Portada de Metodología de la investigación total, sexta edición' : 'Ilustración de análisis de datos y resultados' }}">
+                    @unless($showBookCover)<span>{{ $article['category'] }}</span>@endunless
+                </div>
                 <div class="m-byline"><span>GUÍA DE INVESTIGACIÓN</span><span aria-hidden="true">·</span><time>{{ $article['date'] }}</time><span aria-hidden="true">·</span><span>Lectura educativa</span></div>
                 <div class="m-prose">
                     <p class="m-lead">{{ $article['excerpt'] }}</p>

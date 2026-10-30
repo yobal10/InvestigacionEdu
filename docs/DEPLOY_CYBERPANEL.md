@@ -58,8 +58,15 @@ runuser -u inves9394 -- php "$APP_DIR/artisan" route:cache
 runuser -u inves9394 -- php "$APP_DIR/artisan" view:cache
 ```
 
+Después de publicar por Git, verifica que LiteSpeed pueda leer los recursos estáticos nuevos. Aplica permisos de lectura solo a esas carpetas y archivos:
+
+```bash
+runuser -u inves9394 -- chmod 755 "$APP_DIR/public/assets/frontend" "$APP_DIR/public/assets/frontend/css" "$APP_DIR/public/assets/frontend/js" "$APP_DIR/public/assets/frontend/images"
+runuser -u inves9394 -- chmod 644 "$APP_DIR/public/assets/frontend/css/public-site.css" "$APP_DIR/public/assets/frontend/css/public-site-overrides.css" "$APP_DIR/public/assets/frontend/js/public-site.js" "$APP_DIR/public/assets/frontend/images/imagen-estudio.svg"
+```
+
 Conserva el `.env`, el `APP_KEY`, las credenciales de la base de datos y el almacenamiento. No ejecutes `db:seed`, `migrate:fresh`, `migrate:refresh` ni `db:wipe`.
 
 ## 3. Verificar el sitio
 
-Abre `https://investigacionedu.exnor.site/` y prueba el menú y la navegación del portal. Comprueba también `/metodologia`, el inicio de sesión, el panel, las encuestas existentes y un enlace público de encuesta. Los registros y publicaciones deben seguir disponibles.
+Comprueba que los archivos `/assets/frontend/css/public-site.css` y `/assets/frontend/images/imagen-estudio.svg` respondan HTTP 200. Después abre `https://investigacionedu.exnor.site/` y prueba el menú y la navegación del portal. Comprueba también `/metodologia`, el inicio de sesión, el panel, las encuestas existentes y un enlace público de encuesta. Los registros y publicaciones deben seguir disponibles.
