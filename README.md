@@ -66,6 +66,8 @@ http://127.0.0.1:8000/
 
 El panel conserva las funciones del blog y añade un módulo de encuestas autenticado. Cada usuario gestiona sus propias encuestas; el administrador puede gestionarlas todas. Se pueden redactar encuestas con selección única o múltiple, texto, Likert, NPS, estrellas, lista desplegable, número y fecha; publicarlas mediante un enlace público; consultar respuestas y exportarlas a CSV.
 
+La portada pública y sus páginas informativas usan el diseño del proyecto de referencia. El blog, el panel, las cuentas, las encuestas, sus respuestas y el módulo de metodología siguen formando parte de esta aplicación.
+
 La migración `2026_10_29_000001_create_surveys_and_responses_tables.php` crea las tablas `surveys` y `survey_responses`. En instalaciones existentes que usan migraciones, ejecutar `php artisan migrate` después de actualizar el código. El volcado local de base de datos no se incluye en Git para evitar publicar datos de cuentas; conserva una copia protegida y respáldala antes de migrar. Las respuestas son anónimas en esta versión.
 
 La sección pública `/metodologia` y la tarjeta del panel presentan la referencia bibliográfica *Metodología de la investigación total*, 6.ª edición, con Humberto Ñaupas Paitán y coautores. Incluye calculadoras de tamaño de muestra, alfa de Cronbach, correlación de Pearson y estadísticos descriptivos. Los cálculos se ejecutan en el navegador y no se almacenan. El repositorio incluye la imagen de portada compartida para esta integración; antes de publicar el sitio, confirma que tienes los permisos de uso de la imagen. No se distribuye el PDF ni se copia su contenido extenso.

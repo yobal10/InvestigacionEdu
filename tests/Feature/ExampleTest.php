@@ -11,8 +11,10 @@ class ExampleTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_the_application_returns_a_successful_response(): void
+    protected function setUp(): void
     {
+        parent::setUp();
+
         SiteSetting::create([
             'site_title' => 'Sitio de prueba',
             'tagline' => 'Pruebas',
@@ -26,9 +28,21 @@ class ExampleTest extends TestCase
             'header_menu' => json_encode([]),
             'footer_menu' => json_encode([]),
         ]);
+    }
 
+    public function test_the_homepage_displays_the_public_portal(): void
+    {
         $response = $this->get('/');
 
-        $response->assertStatus(200);
+        $response->assertOk()
+            ->assertSeeText('Investiga, pregunta y comprende tus resultados');
+    }
+
+    public function test_research_guide_and_public_article_are_available(): void
+    {
+        $this->get('/guia-de-investigacion')->assertOk();
+        $this->get('/blog/metodologia-de-estudios-online')
+            ->assertOk()
+            ->assertSeeText('Metodología de estudios online');
     }
 }

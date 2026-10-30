@@ -1,0 +1,78 @@
+html,
+body {
+    min-height: 100%;
+    margin: 0;
+}
+
+.marketing-site .m-brand,
+.marketing-site .m-article > h1,
+.marketing-site .m-landing-hero h1,
+.marketing-site .m-kicker {
+    letter-spacing: 0;
+}
+
+.marketing-site .m-article > h1 {
+    font-size: 48px;
+}
+
+.marketing-site .m-landing-hero h1 {
+    font-size: 58px;
+}
+
+.marketing-site .m-search-drawer[hidden],
+.marketing-site .m-search-results[hidden],
+.marketing-site [data-search-item][hidden],
+.marketing-site .m-dropdown[hidden] {
+    display: none;
+}
+
+.marketing-site .m-nav > .m-menu-wrap {
+    flex: 0 0 auto;
+}
+
+.marketing-site .m-nav > .m-menu-wrap > button {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+
+.marketing-site .m-promo-link,
+.marketing-site .m-modal-primary,
+.marketing-site .m-ending > a {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    padding: 14px 20px;
+    background: #1685e6;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.marketing-site .m-site-note {
+    margin: 42px 0 0;
+    padding: 15px 18px;
+    border-left: 4px solid #1685e6;
+    background: #eef6fd;
+    color: #365471;
+    font-size: 13px;
+}
+
+@media (max-width: 790px) {
+    .marketing-site .m-article > h1 {
+        font-size: 40px;
+    }
+
+    .marketing-site .m-landing-hero h1 {
+        font-size: 44px;
+    }
+}
+
+@media (max-width: 530px) {
+    .marketing-site .m-article > h1 {
+        font-size: 32px;
+    }
+
+    .marketing-site .m-landing-hero h1 {
+        font-size: 34px;
+    }
+}

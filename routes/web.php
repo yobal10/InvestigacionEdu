@@ -20,6 +20,8 @@ use App\Http\Controllers\Frontend\CommentController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\Frontend\PostController;
+use App\Http\Controllers\Frontend\PublicPortalController;
+use App\Http\Controllers\Frontend\ResearchGuideController;
 use App\Http\Controllers\Frontend\SearchController;
 use App\Http\Controllers\Frontend\SurveyController as FrontendSurveyController;
 use App\Http\Controllers\Frontend\MethodologyController;
@@ -29,11 +31,19 @@ use App\Http\Controllers\Dashboard\SurveyController as DashboardSurveyController
 use Illuminate\Support\Facades\Route;
 
 Route::name("frontend.")->group(function() {
-    Route::get("/", [HomeController::class, "index"])->name("home");
+    Route::get("/", [PublicPortalController::class, "home"])->name("home");
+    Route::get("/inicio", [PublicPortalController::class, "page"])->defaults("pageKey", "inicio")->name("portal.home");
+    Route::get("/recursos", [PublicPortalController::class, "page"])->defaults("pageKey", "recursos")->name("portal.resources");
+    Route::get("/caracteristicas", [PublicPortalController::class, "page"])->defaults("pageKey", "caracteristicas")->name("portal.features");
+    Route::get("/soluciones", [PublicPortalController::class, "page"])->defaults("pageKey", "soluciones")->name("portal.solutions");
+    Route::get("/plantillas", [PublicPortalController::class, "page"])->defaults("pageKey", "plantillas")->name("portal.templates");
+    Route::get("/precios", [PublicPortalController::class, "page"])->defaults("pageKey", "precios")->name("portal.pricing");
+    Route::get("/blog/{slug}", [PublicPortalController::class, "article"])->where("slug", "[A-Za-z0-9-]+")->name("portal.article");
     Route::get("/metodologia", [MethodologyController::class, "index"])->name("methodology");
     Route::get("/encuestas/{slug}", [FrontendSurveyController::class, "show"])->name("surveys.show");
     Route::post("/encuestas/{slug}", [FrontendSurveyController::class, "submit"])->middleware("throttle:10,1")->name("surveys.submit");
     Route::get("/search", [SearchController::class, "index"])->name("search");
+    Route::get("/guia-de-investigacion", [ResearchGuideController::class, "index"])->name("research.guide");
     Route::get("/post/{slug}", [PostController::class, "index"])->name("post");
     Route::post("/comment/{id}", [CommentController::class, "index"])->name("comment");
     Route::post("/comment-reply", [CommentController::class, "reply"])->name("comment.reply");
