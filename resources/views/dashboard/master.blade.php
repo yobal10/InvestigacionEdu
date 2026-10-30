@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{ asset("assets/dashboard/plugins/overlayScrollbars/css/OverlayScrollbars.min.css") }}"/>
     <link rel="stylesheet" href="{{ asset("assets/dashboard/plugins/daterangepicker/daterangepicker.css") }}"/>
     <link rel="stylesheet" href="{{ asset("assets/dashboard/plugins/summernote/summernote-bs4.min.css") }}"/>
-    <link rel="stylesheet" href="{{ asset("assets/dashboard/css/investigaedu-panel.css") }}?v=3"/>
+    <link rel="stylesheet" href="{{ asset("assets/dashboard/css/investigaedu-panel.css") }}?v=4"/>
     @yield("style")
 </head>
 <body class="hold-transition dashboard-nexo">
